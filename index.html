@@ -1,0 +1,83 @@
+                                            <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="calc.css">
+</head>
+<body>
+    <div id="mainbody">
+        
+        <div>
+            <input id=display1 type="text">
+        </div>
+        
+        <div class="rows">
+            <button  onclick="buttonclicked(7)" class="buttons">7</button>
+            <button  onclick="buttonclicked(8)"  class="buttons">8</button>
+            <button  onclick="buttonclicked(9)" class="buttons">9</button>
+            <button  onclick="operatorclicked('+')" class="buttons">÷</button>
+         </div>
+        <div class="rows">
+            <button  onclick="buttonclicked(4)" class="buttons">4</button>
+            <button  onclick="buttonclicked(5)" class="buttons">5</button>
+            <button  onclick="buttonclicked(6)" class="buttons">6</button>
+            <button  onclick="operatorclicked('*')" class="buttons">X</button>
+        </div>
+        <div class="rows">
+            <button  onclick="buttonclicked(1)"class="buttons">1</button>
+            <button  onclick="buttonclicked(2)"class="buttons">2</button>
+            <button  onclick="buttonclicked(3)" class="buttons">3</button>
+            <button  onclick="operatorclicked('-')"class="buttons">-</button>
+        </div>
+        <div class="rows">
+            <button  onclick="buttonclicked('.')" class="buttons">.</button>
+            <button  onclick="buttonclicked(0)" class="buttons">0</button>
+            <button  onclick="final()" class="buttons">=</button>
+            <button  onclick= "displayclr()" class="buttons">clr</button>
+
+            <button  onclick= "operatorclicked('+')" class="buttons">+</button>
+
+        </div>
+     </div>
+            <script>
+                var count
+                var text1
+                function buttonclicked(val){
+
+                    document.getElementById("display1").value+=val
+                    var text1=document.getElementById("display1").value
+                     var count=0
+                     this.count=count
+                     this.text1=text1
+
+                    
+                }
+            
+                function displayclr(){
+                    document.getElementById("display1").value=""
+                }
+                function final(){
+                    let text=document.getElementById("display1").value;
+                    let result=eval(text);
+                    document.getElementById("display1").value=result
+                }
+            
+                function operatorclicked(n){
+                    
+                    if(count==0){
+                         
+                        document.getElementById("display1").value=text1+n
+                        
+                        count=1
+                    }
+                        
+                }
+               
+
+
+            </script>
+</body>
+</html>
